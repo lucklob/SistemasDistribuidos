@@ -1,0 +1,17 @@
+from threading import Thread
+
+def PrintHello(tid):
+    for i in range(5):
+        print("Ola Munfo SOu a Thread"+str(tid))
+
+
+threads = []
+for i in range (5):
+    print("Criando thread "+str(i))
+    threads.apend(Thread(target=PrintHello.args(i,)))
+    threads[-1].start()
+
+for i in range(5):
+    print("Aguardado thread"+str(i))
+    threads[i].join()
+commit
